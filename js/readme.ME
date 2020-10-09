@@ -1,0 +1,21 @@
+Поиск наибольшего значения среди свойств объекта
+
+Напиши функцию findBestEmployee(employees), которая 
+принимает объект сотрудников и возвращает имя самого 
+продуктивного (который выполнил больше всех задач). 
+Сотрудники и кол-во выполненных задач содержатся как 
+свойства объекта в формате "имя":"кол-во задач".
+
+Object.keys(obj).length == 0) {
+    console.log('пуст'
+
+    const message = " ";
+  let values = Object.values(employees);
+  for (let value of values) {
+    if ((values = Math.max.apply(Math, values))) {
+      return Object.keys(employees).find((key) => employees[key] === values);
+    } else if (Object.keys(employees).length == 0) {
+      return message;
+    }
+  }
+};

@@ -2,15 +2,13 @@ function getAllPropValues (array, prop) {
     'use strict';
     // Write code under this line 
     let result = [];
-    let values = '';
+    let values = array[prop];
     //let keys = Object.keys(array[i]);
     //let values = Object.values(array);
      
-    for (let i = 0; i < array.length; i ++) {
-        if ('name' in Object.keys(array[i]) === true) {
-            prop = name;
-            values === array[i].name;
-            //return Object.keys(array[i++])
+    for (const key of array) {
+        if () {
+            
         }
 
         return values;

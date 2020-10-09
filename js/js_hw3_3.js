@@ -1,16 +1,15 @@
 const findBestEmployee = function (employees) {
   "use strict";
   // Write code under this line
-  let keys = Object.keys(employees);
   let bestEmployee = 0;
-  const message = " ";
-  for (let key of keys) {
-    if ((bestEmployee = Math.max(employees[keys]))) {
-      return bestEmployee;
-    } else if (Object.keys(employees).length == 0) {
-      return message;
+  let message = '';
+  for (let key in employees) {
+    if (employees[key] > bestEmployee) {
+      bestEmployee = employees[key];
+      message = key;
     }
   }
+  return message;
 };
 
 // Объекты и ожидаемый результат

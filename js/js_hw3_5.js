@@ -2,17 +2,18 @@ function getAllPropValues (array, prop) {
     'use strict';
     // Write code under this line 
     let result = [];
+    let values = '';
     //let keys = Object.keys(array[i]);
     //let values = Object.values(array);
      
-    for (let i = 0; i < array.length; i += 1) {
+    for (let i = 0; i < array.length; i ++) {
         if ('name' in Object.keys(array[i]) === true) {
             prop = name;
-            result.push(Object.keys(array[prop]));
+            values === array[i].name;
             //return Object.keys(array[i++])
         }
 
-        return array[i++];
+        return values;
     }     
     //for (let prop of array.values()) {
       //  if ('name' in array.values() === true) {
@@ -35,6 +36,8 @@ function getAllPropValues (array, prop) {
       { name: 'Дроид', price: 400, quantity: 7 },
       { name: 'Захват', price: 1200, quantity: 2 },
   ]; 
+
+
   console.log(getAllPropValues(products, 'name'));
   //console.log(getAllPropValues(products, 'name'));
   // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']

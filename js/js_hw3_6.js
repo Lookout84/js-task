@@ -2,19 +2,12 @@ function calculateTotalPrice (array, prop) {
     'use strict';
     // Write code under this line
     let total = 0;
-    //let values = Object.values(array);
-    
-
-
     for (let arr of array) {
-        let keys = Object.keys(arr);
-        let value = Object.values(arr);
-        keys[prop] = value;
-       
-       // total =  ;
-        return value;
-    }
-    
+        if (arr.name === prop) {
+            total += arr.price * arr.quantity;
+            }
+        }
+        return total;
   }
   
   // Объекты и ожидаемый результат

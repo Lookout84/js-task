@@ -1,7 +1,7 @@
 // Write code under this line
-const addIndex = (element, index) => element;
+const addIndex = (element, index) => element + index;
 // Write code under this line
-const subIndex = (element, index) => element;
+const subIndex = (element, index) => element - index;
   
 function mapArray(array, cb) {
   'use strict';

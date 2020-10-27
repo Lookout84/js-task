@@ -1,15 +1,14 @@
 class Car {
     // Write code under this line
     static getSpecs(car) {
-        car;
-       return `maxSpeed: ${this.maxSpeed}, speed: ${this.speed}, isOn: ${this.isOn}, distance: ${this.distance}, price: ${this.price}`;
+       return `maxSpeed: ${car.maxSpeed}, speed: ${car.speed}, isOn: ${car.isOn}, distance: ${car.distance}, price: ${car.price}`;
     }
-    constructor(maxSpeed, speed, isOn, distance, price) {
-        this.maxSpeed = maxSpeed;
-        this.speed = speed;
-        this.isOn = isOn;
-        this.distance = distance;
-        this._price = price;
+    constructor(car) {
+        this.maxSpeed = car.maxSpeed;
+        this.speed = 0;
+        this.isOn = false;
+        this.distance = 0;
+        this._price = car.price;
      }
     get price() {
         return this._price;
@@ -18,16 +17,14 @@ class Car {
         this._price = value;
      }
     turnOn() {
-        this.isOn === true;
-        return this.isOn;
+        this.isOn = true;
      }
     turnOff() {
-        this.isOn === false;
+        this.isOn = false;
         this.speed = 0;
-        return this.isOn;
      }  
     accelerate(value) {
-        if (value > 0) {
+        if (value > 0 && this.isOn == true) {
             this.speed += value;
         }
         if (this.speed <= this.maxSpeed){
@@ -35,10 +32,11 @@ class Car {
         }
      }
      decelerate(value) {
-        if (value > 0) {
+        if (value > 0 && this.isOn == true) {
             this.speed += value;
         }
-        if (this.speed > 0){
+
+        if (this.speed > 0) {
             return this.speed;
         }
     }
@@ -67,8 +65,5 @@ class Car {
    
    console.log(mustang.price); // 2000
    mustang.price = 4000;
-   console.log(mustang.price); // 4000
-
-
-   
+   console.log(mustang.price); // 4000  
    

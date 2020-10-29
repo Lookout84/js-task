@@ -88,7 +88,7 @@ const array = [
 
 const users = array;
 
-const getSortedUniqueSkills = (array) => array.slice().sort((a, b) => a.skills - b.skills).reduce((skill, {skills}) => skill += skills, []);
+const getSortedUniqueSkills = (array) => array.reduce((skill, {skills}) => skill.concat(skills), []).sort().filter((skill, i, skills) => skills[i + 1] !== skill);
 
 console.log(getSortedUniqueSkills(users));
 /* [ 'adipisicing', 'amet',
@@ -101,6 +101,3 @@ console.log(getSortedUniqueSkills(users));
  'nulla', 'proident',
  'tempor', 'velit',
  'veniam' ]; */
-
- const getSortedUniqueSkills = (array) => array.map(({skills}) => skills).reduce((allSkills, skill) => allSkills.concat(skill)).sort().filter((item, i, allSkills) => allSkills[i + 1] !== item);
-console.log(getSortedUniqueSkills(users));

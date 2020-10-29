@@ -101,3 +101,6 @@ console.log(getSortedUniqueSkills(users));
  'nulla', 'proident',
  'tempor', 'velit',
  'veniam' ]; */
+
+ const getSortedUniqueSkills = (array) => array.map(({skills}) => skills).reduce((allSkills, skill) => allSkills.concat(skill)).sort().filter((item, i, allSkills) => allSkills[i + 1] !== item);
+console.log(getSortedUniqueSkills(users));
